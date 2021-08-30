@@ -11,8 +11,16 @@
 		FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64A26DB82CD00418765 /* SceneDelegate.swift */; };
 		FB81A64D26DB82CD00418765 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64C26DB82CD00418765 /* ViewController.swift */; };
 		FB81A65026DB82CD00418765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB81A64E26DB82CD00418765 /* Main.storyboard */; };
-		FB81A65226DB82CF00418765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB81A65126DB82CF00418765 /* Assets.xcassets */; };
 		FB81A65526DB82CF00418765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB81A65326DB82CF00418765 /* LaunchScreen.storyboard */; };
+		FB81A66326DB83EF00418765 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66226DB83EF00418765 /* MainTabController.swift */; };
+		FB81A66526DB85D800418765 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66426DB85D800418765 /* FeedController.swift */; };
+		FB81A66726DB860600418765 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66626DB860600418765 /* SearchController.swift */; };
+		FB81A66926DB861600418765 /* ImageSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66826DB861600418765 /* ImageSelectorController.swift */; };
+		FB81A66B26DB862200418765 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66A26DB862200418765 /* NotificationController.swift */; };
+		FB81A66D26DB862C00418765 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A66C26DB862C00418765 /* ProfileController.swift */; };
+		FB81A66F26DB8D1C00418765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB81A66E26DB8D1C00418765 /* Assets.xcassets */; };
+		FB81A67126DCC9DD00418765 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A67026DCC9DD00418765 /* FeedCell.swift */; };
+		FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A67226DCCC3B00418765 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +29,17 @@
 		FB81A64A26DB82CD00418765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB81A64C26DB82CD00418765 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB81A64F26DB82CD00418765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FB81A65126DB82CF00418765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB81A65426DB82CF00418765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB81A65626DB82CF00418765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB81A66226DB83EF00418765 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		FB81A66426DB85D800418765 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		FB81A66626DB860600418765 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		FB81A66826DB861600418765 /* ImageSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectorController.swift; sourceTree = "<group>"; };
+		FB81A66A26DB862200418765 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		FB81A66C26DB862C00418765 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FB81A66E26DB8D1C00418765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
+		FB81A67026DCC9DD00418765 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		FB81A67226DCCC3B00418765 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,71 @@
 		FB81A64726DB82CD00418765 /* InstagramFirestoreTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				FB81A66126DB835A00418765 /* Model */,
+				FB81A66026DB835900418765 /* View */,
+				FB81A65F26DB835700418765 /* ViewModel */,
+				FB81A65E26DB835600418765 /* Controller */,
+				FB81A65D26DB835500418765 /* API */,
+				FB81A65C26DB830E00418765 /* Utils */,
 				FB81A64826DB82CD00418765 /* AppDelegate.swift */,
 				FB81A64A26DB82CD00418765 /* SceneDelegate.swift */,
 				FB81A64C26DB82CD00418765 /* ViewController.swift */,
 				FB81A64E26DB82CD00418765 /* Main.storyboard */,
-				FB81A65126DB82CF00418765 /* Assets.xcassets */,
+				FB81A66E26DB8D1C00418765 /* Assets.xcassets */,
 				FB81A65326DB82CF00418765 /* LaunchScreen.storyboard */,
 				FB81A65626DB82CF00418765 /* Info.plist */,
 			);
 			path = InstagramFirestoreTutorial;
+			sourceTree = "<group>";
+		};
+		FB81A65C26DB830E00418765 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB81A67226DCCC3B00418765 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB81A65D26DB835500418765 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FB81A65E26DB835600418765 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB81A66226DB83EF00418765 /* MainTabController.swift */,
+				FB81A66426DB85D800418765 /* FeedController.swift */,
+				FB81A66626DB860600418765 /* SearchController.swift */,
+				FB81A66826DB861600418765 /* ImageSelectorController.swift */,
+				FB81A66A26DB862200418765 /* NotificationController.swift */,
+				FB81A66C26DB862C00418765 /* ProfileController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB81A65F26DB835700418765 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FB81A66026DB835900418765 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB81A67026DCC9DD00418765 /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB81A66126DB835A00418765 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB81A65526DB82CF00418765 /* LaunchScreen.storyboard in Resources */,
-				FB81A65226DB82CF00418765 /* Assets.xcassets in Resources */,
+				FB81A66F26DB8D1C00418765 /* Assets.xcassets in Resources */,
 				FB81A65026DB82CD00418765 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +210,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB81A64D26DB82CD00418765 /* ViewController.swift in Sources */,
+				FB81A67126DCC9DD00418765 /* FeedCell.swift in Sources */,
+				FB81A66926DB861600418765 /* ImageSelectorController.swift in Sources */,
+				FB81A66B26DB862200418765 /* NotificationController.swift in Sources */,
+				FB81A66726DB860600418765 /* SearchController.swift in Sources */,
 				FB81A64926DB82CD00418765 /* AppDelegate.swift in Sources */,
+				FB81A66D26DB862C00418765 /* ProfileController.swift in Sources */,
+				FB81A66526DB85D800418765 /* FeedController.swift in Sources */,
+				FB81A66326DB83EF00418765 /* MainTabController.swift in Sources */,
+				FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */,
 				FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
