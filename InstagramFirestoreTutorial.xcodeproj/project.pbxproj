@@ -10,6 +10,7 @@
 		FB7DEF2626DE0DE80042DA0F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2526DE0DE80042DA0F /* LoginController.swift */; };
 		FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */; };
 		FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */; };
+		FB7DEF6F26E35BDD0042DA0F /* AuthentificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF6E26E35BDD0042DA0F /* AuthentificationViewModel.swift */; };
 		FB81A64926DB82CD00418765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64826DB82CD00418765 /* AppDelegate.swift */; };
 		FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64A26DB82CD00418765 /* SceneDelegate.swift */; };
 		FB81A64D26DB82CD00418765 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64C26DB82CD00418765 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		FB7DEF2526DE0DE80042DA0F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		FB7DEF6E26E35BDD0042DA0F /* AuthentificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewModel.swift; sourceTree = "<group>"; };
 		FB81A64526DB82CD00418765 /* InstagramFirestoreTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestoreTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB81A64826DB82CD00418765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB81A64A26DB82CD00418765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		FB81A65F26DB835700418765 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FB7DEF6E26E35BDD0042DA0F /* AuthentificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				FB81A66326DB83EF00418765 /* MainTabController.swift in Sources */,
 				FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */,
 				FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */,
+				FB7DEF6F26E35BDD0042DA0F /* AuthentificationViewModel.swift in Sources */,
 				FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
