@@ -12,6 +12,7 @@ class RegistrationController: UIViewController {
     // MARK: Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage? // 프로파일 이미지가 화면에 떴을 때 그 값은 존재하지 않기 때문에 nil이 되므로 옵셔널을 붙입니다.
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -41,10 +42,11 @@ class RegistrationController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitle("Sign Up", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         button.setHeight(50)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -86,6 +88,20 @@ class RegistrationController: UIViewController {
         picker.allowsEditing = true
         
         present(picker, animated: true, completion: nil)
+    }
+    
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = UsernameTextField.text else { return }
+        guard let profileImage = self.profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email, password: password,
+                                          fullname: fullname, username: username,
+                                          profileImage: profileImage)
+        
+        AuthService.registerUser(WithCredential: credentials)
     }
     
     // MARK: Helpers
@@ -132,6 +148,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage
         
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width / 2
         plusPhotoButton.layer.masksToBounds = true
