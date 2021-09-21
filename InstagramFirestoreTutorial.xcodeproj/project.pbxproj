@@ -15,6 +15,12 @@
 		FB7DEF7326E4B7630042DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB7DEF7226E4B7630042DA0F /* GoogleService-Info.plist */; };
 		FB7DEF7526E4C2AF0042DA0F /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF7426E4C2AF0042DA0F /* ImageUploader.swift */; };
 		FB7DEF7726E4C2BD0042DA0F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF7626E4C2BD0042DA0F /* AuthService.swift */; };
+		FB819AB226E8981D002CFFB4 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AB126E8981D002CFFB4 /* ProfileCell.swift */; };
+		FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */; };
+		FB819AC526EC9CEC002CFFB4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AC426EC9CEC002CFFB4 /* UserService.swift */; };
+		FB819AC726EC9D6E002CFFB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AC626EC9D6E002CFFB4 /* Constants.swift */; };
+		FB819AC926ECA006002CFFB4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AC826ECA006002CFFB4 /* User.swift */; };
+		FB819AD626EDEACB002CFFB4 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AD526EDEACB002CFFB4 /* ProfileHeaderViewModel.swift */; };
 		FB81A64926DB82CD00418765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64826DB82CD00418765 /* AppDelegate.swift */; };
 		FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64A26DB82CD00418765 /* SceneDelegate.swift */; };
 		FB81A64D26DB82CD00418765 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A64C26DB82CD00418765 /* ViewController.swift */; };
@@ -42,6 +48,12 @@
 		FB7DEF7226E4B7630042DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FB7DEF7426E4C2AF0042DA0F /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		FB7DEF7626E4C2BD0042DA0F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FB819AB126E8981D002CFFB4 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		FB819AC426EC9CEC002CFFB4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FB819AC626EC9D6E002CFFB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FB819AC826ECA006002CFFB4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FB819AD526EDEACB002CFFB4 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		FB81A64526DB82CD00418765 /* InstagramFirestoreTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirestoreTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB81A64826DB82CD00418765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB81A64A26DB82CD00418765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +110,15 @@
 			path = Authentification;
 			sourceTree = "<group>";
 		};
+		FB819AB326E89830002CFFB4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FB819AB126E8981D002CFFB4 /* ProfileCell.swift */,
+				FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		FB81A63C26DB82CD00418765 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FB81A67226DCCC3B00418765 /* Extensions.swift */,
+				FB819AC626EC9D6E002CFFB4 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -150,6 +172,7 @@
 			children = (
 				FB7DEF7426E4C2AF0042DA0F /* ImageUploader.swift */,
 				FB7DEF7626E4C2BD0042DA0F /* AuthService.swift */,
+				FB819AC426EC9CEC002CFFB4 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -172,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				FB7DEF6E26E35BDD0042DA0F /* AuthentificationViewModel.swift */,
+				FB819AD526EDEACB002CFFB4 /* ProfileHeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,6 +203,7 @@
 		FB81A66026DB835900418765 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB819AB326E89830002CFFB4 /* Profile */,
 				FB81A67026DCC9DD00418765 /* FeedCell.swift */,
 				FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */,
 			);
@@ -188,6 +213,7 @@
 		FB81A66126DB835A00418765 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB819AC826ECA006002CFFB4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */,
+				FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */,
 				FB81A64D26DB82CD00418765 /* ViewController.swift in Sources */,
 				FB7DEF2626DE0DE80042DA0F /* LoginController.swift in Sources */,
 				FB81A67126DCC9DD00418765 /* FeedCell.swift in Sources */,
@@ -316,12 +343,17 @@
 				FB81A66726DB860600418765 /* SearchController.swift in Sources */,
 				FB81A64926DB82CD00418765 /* AppDelegate.swift in Sources */,
 				FB81A66D26DB862C00418765 /* ProfileController.swift in Sources */,
+				FB819AC926ECA006002CFFB4 /* User.swift in Sources */,
 				FB81A66526DB85D800418765 /* FeedController.swift in Sources */,
+				FB819AD626EDEACB002CFFB4 /* ProfileHeaderViewModel.swift in Sources */,
+				FB819AC726EC9D6E002CFFB4 /* Constants.swift in Sources */,
 				FB81A66326DB83EF00418765 /* MainTabController.swift in Sources */,
 				FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */,
 				FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */,
 				FB7DEF7526E4C2AF0042DA0F /* ImageUploader.swift in Sources */,
 				FB7DEF7726E4C2BD0042DA0F /* AuthService.swift in Sources */,
+				FB819AC526EC9CEC002CFFB4 /* UserService.swift in Sources */,
+				FB819AB226E8981D002CFFB4 /* ProfileCell.swift in Sources */,
 				FB7DEF6F26E35BDD0042DA0F /* AuthentificationViewModel.swift in Sources */,
 				FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */,
 			);

@@ -6,27 +6,51 @@
 //
 
 import UIKit
+import Firebase
 
 private let reusableIdentifier = "Cell"
 
 class FeedController: UICollectionViewController {
     
     // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
     }
     
+    // MARK: Actions
+    
+    @objc func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+            let controller = LoginController()
+            controller.delegate = self.tabBarController as? MainTabController
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("DEBUG: Failed to Logout")
+        }
+    }
+    
     // MARK: Helpers
+    
     func configureUI() {
         collectionView.backgroundColor = .white //view.backgroundColor가 아닌 UICollectionViewController이기 때문에 collectionView로 적어야 합니다
         
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(handleLogout))
     }
 }
 
 // MARK: UICollectionViewDataSource
+
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -40,6 +64,7 @@ extension FeedController {
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
+
 extension FeedController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

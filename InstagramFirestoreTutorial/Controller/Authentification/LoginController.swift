@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol AuthentificationDelegate: class {
+    func authentificationDidComplete()
+}
+
 class LoginController: UIViewController {
     
     // MARK: Properties
     
     private var viewModel = LoginViewModel()
+    weak var delegate: AuthentificationDelegate?
     
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
@@ -40,6 +45,7 @@ class LoginController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -57,6 +63,7 @@ class LoginController: UIViewController {
     }()
     
     // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -64,8 +71,24 @@ class LoginController: UIViewController {
     }
     
     // MARK: Actions
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        AuthService.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to log user in \(error.localizedDescription)")
+                return
+            }
+            self.delegate?.authentificationDidComplete()
+//            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @objc func handleShowSignUp() {
         let controller = RegistrationController()
+        controller.delegate = delegate
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -79,6 +102,7 @@ class LoginController: UIViewController {
     }
     
     // MARK: Helpers
+    
     func configureUI() {
         configureGradientLayer()
         navigationController?.navigationBar.isHidden = true
@@ -109,6 +133,7 @@ class LoginController: UIViewController {
 }
 
 // MARK: FormViewModel
+
 extension LoginController: FormViewModel {
     func updateForm() {
         loginButton.backgroundColor = viewModel.buttonBackgroundColor

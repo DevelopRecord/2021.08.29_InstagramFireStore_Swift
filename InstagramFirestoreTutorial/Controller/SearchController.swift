@@ -12,6 +12,17 @@ class SearchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
+        configureTableView()
     }
+    
+    func configureTableView() {
+        view.backgroundColor = .systemPink
+        
+    }
+}
+
+// MARK: TableView DataSource
+
+extension SearchController {
+    
 }

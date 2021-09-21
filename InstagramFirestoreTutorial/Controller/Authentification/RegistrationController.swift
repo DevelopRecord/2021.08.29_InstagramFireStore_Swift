@@ -13,6 +13,7 @@ class RegistrationController: UIViewController {
     
     private var viewModel = RegistrationViewModel()
     private var profileImage: UIImage? // 프로파일 이미지가 화면에 떴을 때 그 값은 존재하지 않기 때문에 nil이 되므로 옵셔널을 붙입니다.
+    weak var delegate: AuthentificationDelegate?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -94,14 +95,21 @@ class RegistrationController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         guard let fullname = fullnameTextField.text else { return }
-        guard let username = UsernameTextField.text else { return }
+        guard let username = UsernameTextField.text?.lowercased() else { return }
         guard let profileImage = self.profileImage else { return }
         
         let credentials = AuthCredentials(email: email, password: password,
                                           fullname: fullname, username: username,
                                           profileImage: profileImage)
         
-        AuthService.registerUser(WithCredential: credentials)
+        AuthService.registerUser(WithCredential: credentials) { error in
+            if let error = error {
+                print("DEBUG: Failed to register.. \(error.localizedDescription)")
+                return
+            }
+            
+            self.delegate?.authentificationDidComplete()
+        }
     }
     
     // MARK: Helpers
