@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		993FBBE0E4396D745F0EC6E6 /* Pods_InstagramFirestoreTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3C8246B1467CD64F9F6C52 /* Pods_InstagramFirestoreTutorial.framework */; };
+		FB77799326F9C3EF00246111 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB77799226F9C3EF00246111 /* UserCell.swift */; };
 		FB7DEF2626DE0DE80042DA0F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2526DE0DE80042DA0F /* LoginController.swift */; };
 		FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */; };
 		FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */; };
@@ -41,6 +42,7 @@
 		0A3C8246B1467CD64F9F6C52 /* Pods_InstagramFirestoreTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirestoreTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FEB9CD832A3674C71F1C8D4 /* Pods-InstagramFirestoreTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestoreTutorial.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirestoreTutorial/Pods-InstagramFirestoreTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		C18C117EFA37EDC308D84BC5 /* Pods-InstagramFirestoreTutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirestoreTutorial.debug.xcconfig"; path = "Target Support Files/Pods-InstagramFirestoreTutorial/Pods-InstagramFirestoreTutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		FB77799226F9C3EF00246111 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		FB7DEF2526DE0DE80042DA0F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				FB819AB126E8981D002CFFB4 /* ProfileCell.swift */,
 				FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */,
+				FB77799226F9C3EF00246111 /* UserCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				FB81A66926DB861600418765 /* ImageSelectorController.swift in Sources */,
 				FB81A66B26DB862200418765 /* NotificationController.swift in Sources */,
 				FB81A66726DB860600418765 /* SearchController.swift in Sources */,
+				FB77799326F9C3EF00246111 /* UserCell.swift in Sources */,
 				FB81A64926DB82CD00418765 /* AppDelegate.swift in Sources */,
 				FB81A66D26DB862C00418765 /* ProfileController.swift in Sources */,
 				FB819AC926ECA006002CFFB4 /* User.swift in Sources */,
