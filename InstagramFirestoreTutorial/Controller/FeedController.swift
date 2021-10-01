@@ -38,7 +38,7 @@ class FeedController: UICollectionViewController {
     // MARK: Helpers
     
     func configureUI() {
-        collectionView.backgroundColor = .white //view.backgroundColor가 아닌 UICollectionViewController이기 때문에 collectionView로 적어야 합니다
+        collectionView.backgroundColor = .white
         
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
         
