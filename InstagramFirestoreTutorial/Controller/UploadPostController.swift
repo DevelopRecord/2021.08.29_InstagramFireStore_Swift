@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol UploadPostControllerDelegate: AnyObject {
+    func controllerDidFinishUploadingPost(_ controller: UploadPostController)
+}
+
 class UploadPostController: UIViewController {
+    
+    weak var delegate: UploadPostControllerDelegate?
+    
+    var selectedImage: UIImage? {
+        didSet { photoImageView.image = selectedImage }
+    }
     
     // MARK: Properties
     
@@ -15,7 +25,6 @@ class UploadPostController: UIViewController {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "venom-7")
         return iv
     }()
     
@@ -50,7 +59,17 @@ class UploadPostController: UIViewController {
     }
     
     @objc func didTapDone() {
-        PostService.uploadPost(caption: "Some test caption..")
+        guard let image = selectedImage else { return }
+        guard let caption = captionTextView.text else { return }
+        
+        PostService.uploadPost(caption: caption, image: image) { error in
+            if let error = error {
+                print("DEBUG: Occured error \(error.localizedDescription)")
+                return
+            }
+            
+            self.delegate?.controllerDidFinishUploadingPost(self)
+        }
     }
     
     
