@@ -13,6 +13,7 @@
 		FB7DDCF72704461400D95AEA /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDCF62704461400D95AEA /* UploadPostController.swift */; };
 		FB7DDCF92704492900D95AEA /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDCF82704492900D95AEA /* InputTextView.swift */; };
 		FB7DDCFD2706F34000D95AEA /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDCFC2706F34000D95AEA /* PostService.swift */; };
+		FB7DDD03270ED78900D95AEA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDD02270ED78900D95AEA /* Post.swift */; };
 		FB7DEF2626DE0DE80042DA0F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2526DE0DE80042DA0F /* LoginController.swift */; };
 		FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */; };
 		FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */; };
@@ -51,6 +52,7 @@
 		FB7DDCF62704461400D95AEA /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		FB7DDCF82704492900D95AEA /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		FB7DDCFC2706F34000D95AEA /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		FB7DDD02270ED78900D95AEA /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FB7DEF2526DE0DE80042DA0F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				FB819AC826ECA006002CFFB4 /* User.swift */,
+				FB7DDD02270ED78900D95AEA /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */,
 				FB81A64B26DB82CD00418765 /* SceneDelegate.swift in Sources */,
 				FB7DEF7526E4C2AF0042DA0F /* ImageUploader.swift in Sources */,
+				FB7DDD03270ED78900D95AEA /* Post.swift in Sources */,
 				FB7DEF7726E4C2BD0042DA0F /* AuthService.swift in Sources */,
 				FB7DDCFD2706F34000D95AEA /* PostService.swift in Sources */,
 				FB819AC526EC9CEC002CFFB4 /* UserService.swift in Sources */,

@@ -14,10 +14,34 @@ class FeedController: UICollectionViewController {
     
     // MARK: Lifecycle
     
+    private var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
+        fetchPosts()
+    }
+    
+    // MARK: API
+    
+    func fetchPosts() {
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.reloadData()
+        }
+    }
+    
+    // MARK: Helpers
+    
+    func configureUI() {
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(handleLogout))
     }
     
     // MARK: Actions
@@ -34,26 +58,13 @@ class FeedController: UICollectionViewController {
             print("DEBUG: Failed to Logout")
         }
     }
-    
-    // MARK: Helpers
-    
-    func configureUI() {
-        collectionView.backgroundColor = .white
-        
-        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(handleLogout))
-    }
 }
 
 // MARK: UICollectionViewDataSource
 
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
