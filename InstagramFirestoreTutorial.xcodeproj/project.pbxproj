@@ -14,6 +14,7 @@
 		FB7DDCF92704492900D95AEA /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDCF82704492900D95AEA /* InputTextView.swift */; };
 		FB7DDCFD2706F34000D95AEA /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDCFC2706F34000D95AEA /* PostService.swift */; };
 		FB7DDD03270ED78900D95AEA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDD02270ED78900D95AEA /* Post.swift */; };
+		FB7DDD05271023D700D95AEA /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DDD04271023D700D95AEA /* PostViewModel.swift */; };
 		FB7DEF2626DE0DE80042DA0F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2526DE0DE80042DA0F /* LoginController.swift */; };
 		FB7DEF2826DE0DF60042DA0F /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */; };
 		FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */; };
@@ -53,6 +54,7 @@
 		FB7DDCF82704492900D95AEA /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		FB7DDCFC2706F34000D95AEA /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		FB7DDD02270ED78900D95AEA /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FB7DDD04271023D700D95AEA /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		FB7DEF2526DE0DE80042DA0F /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FB7DEF2726DE0DF60042DA0F /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FB7DEF2926DE1E060042DA0F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				FB7DEF6E26E35BDD0042DA0F /* AuthentificationViewModel.swift */,
 				FB819AD526EDEACB002CFFB4 /* ProfileHeaderViewModel.swift */,
 				FB7779CD26FF155900246111 /* UserCellViewModel.swift */,
+				FB7DDD04271023D700D95AEA /* PostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7DDD05271023D700D95AEA /* PostViewModel.swift in Sources */,
 				FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */,
 				FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */,
 				FB7DDCF72704461400D95AEA /* UploadPostController.swift in Sources */,
