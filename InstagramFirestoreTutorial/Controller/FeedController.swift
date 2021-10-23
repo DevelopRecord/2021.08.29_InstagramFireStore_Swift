@@ -15,6 +15,7 @@ class FeedController: UICollectionViewController {
     // MARK: Lifecycle
     
     private var posts = [Post]()
+    var post: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,29 +23,12 @@ class FeedController: UICollectionViewController {
         fetchPosts()
     }
     
-    // MARK: API
-    
-    func fetchPosts() {
-        PostService.fetchPosts { posts in
-            self.posts = posts
-            self.collectionView.reloadData()
-        }
-    }
-    
-    // MARK: Helpers
-    
-    func configureUI() {
-        collectionView.backgroundColor = .white
-        
-        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(handleLogout))
-    }
-    
     // MARK: Actions
+    
+    @objc func handleRefresh() {
+        posts.removeAll()
+        fetchPosts()
+    }
     
     @objc func handleLogout() {
         do {
@@ -58,21 +42,59 @@ class FeedController: UICollectionViewController {
             print("DEBUG: Failed to Logout")
         }
     }
+    
+    // MARK: API
+    
+    func fetchPosts() {
+        guard post == nil else { return }
+        
+        PostService.fetchPosts { posts in
+            self.posts = posts
+            self.collectionView.refreshControl?.endRefreshing()
+            self.collectionView.reloadData()
+        }
+    }
+    
+    // MARK: Helpers
+    
+    func configureUI() {
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: reusableIdentifier)
+        
+        if post == nil {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                               style: .plain,
+                                                               target: self,
+                                                               action: #selector(handleLogout))
+        }
+        
+        navigationItem.title = "Feed"
+        
+        let refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refresher
+    }
 }
 
 // MARK: UICollectionViewDataSource
 
 extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        return post == nil ? posts.count : 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath) as! FeedCell
-        cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        
+        if let post = post {
+            cell.viewModel = PostViewModel(post: post)
+        } else {
+            cell.viewModel = PostViewModel(post: posts[indexPath.row])
+        }
         return cell
     }
-    
+
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
