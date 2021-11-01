@@ -26,6 +26,8 @@
 		FB7E07C22727F34D001584A0 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E07C12727F34D001584A0 /* CommentCell.swift */; };
 		FB7E07C6272A98A7001584A0 /* CommentInputAccesoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E07C5272A98A7001584A0 /* CommentInputAccesoryView.swift */; };
 		FB8146A4272D2A980063BAE2 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8146A3272D2A980063BAE2 /* CommentService.swift */; };
+		FB8146E5272FD83F0063BAE2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8146E4272FD83F0063BAE2 /* Comment.swift */; };
+		FB8146E7272FDCE40063BAE2 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8146E6272FDCE40063BAE2 /* CommentViewModel.swift */; };
 		FB819AB226E8981D002CFFB4 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AB126E8981D002CFFB4 /* ProfileCell.swift */; };
 		FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */; };
 		FB819AC526EC9CEC002CFFB4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB819AC426EC9CEC002CFFB4 /* UserService.swift */; };
@@ -70,6 +72,8 @@
 		FB7E07C12727F34D001584A0 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		FB7E07C5272A98A7001584A0 /* CommentInputAccesoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputAccesoryView.swift; sourceTree = "<group>"; };
 		FB8146A3272D2A980063BAE2 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		FB8146E4272FD83F0063BAE2 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FB8146E6272FDCE40063BAE2 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		FB819AB126E8981D002CFFB4 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		FB819AB426E8983E002CFFB4 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		FB819AC426EC9CEC002CFFB4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				FB819AD526EDEACB002CFFB4 /* ProfileHeaderViewModel.swift */,
 				FB7779CD26FF155900246111 /* UserCellViewModel.swift */,
 				FB7DDD04271023D700D95AEA /* PostViewModel.swift */,
+				FB8146E6272FDCE40063BAE2 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			children = (
 				FB819AC826ECA006002CFFB4 /* User.swift */,
 				FB7DDD02270ED78900D95AEA /* Post.swift */,
+				FB8146E4272FD83F0063BAE2 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7DDD05271023D700D95AEA /* PostViewModel.swift in Sources */,
+				FB8146E7272FDCE40063BAE2 /* CommentViewModel.swift in Sources */,
 				FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */,
 				FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */,
 				FB7E07C02727F1E2001584A0 /* CommentController.swift in Sources */,
@@ -376,6 +383,7 @@
 				FB81A67126DCC9DD00418765 /* FeedCell.swift in Sources */,
 				FB81A66926DB861600418765 /* ImageSelectorController.swift in Sources */,
 				FB8146A4272D2A980063BAE2 /* CommentService.swift in Sources */,
+				FB8146E5272FD83F0063BAE2 /* Comment.swift in Sources */,
 				FB81A66B26DB862200418765 /* NotificationController.swift in Sources */,
 				FB81A66726DB860600418765 /* SearchController.swift in Sources */,
 				FB77799326F9C3EF00246111 /* UserCell.swift in Sources */,
