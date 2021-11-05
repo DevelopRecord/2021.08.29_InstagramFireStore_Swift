@@ -127,6 +127,13 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
 // MARK: FeedCellDelegate
 
 extension FeedController: FeedCellDelegate {
+    func cell(_ cell: FeedCell, wantToShowProfileFor uid: String) {
+        UserService.fetchUser(withUid: uid) { user in
+            let controller = ProfileController(user: user)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     func cell(_ cell: FeedCell, wantsToCommentsFor post: Post) {
         let controller = CommentController(post: post)
         navigationController?.pushViewController(controller, animated: true)
@@ -147,6 +154,8 @@ extension FeedController: FeedCellDelegate {
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
                 cell.likeButton.tintColor = .red
                 cell.viewModel?.post.likes = post.likes + 1
+                
+                NotificationService.uploadNotification(toUid: post.ownerUid, type: .like, post: post)
             }
         }
     }
