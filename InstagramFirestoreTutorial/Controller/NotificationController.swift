@@ -11,11 +11,27 @@ private let reuseIdentifier = "NotificationCell"
 
 class NotificationController: UITableViewController {
     
+    // MARK: Properties
+    
+    private var notifications = [Notification]() {
+        didSet { tableView.reloadData() }
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        fetchNotifications()
+    }
+    
+    // MARK: API
+    
+    func fetchNotifications() {
+        NotificationService.fetchNotification { notifications in
+            self.notifications = notifications
+            print("DEBUG: Notifications \(notifications)")
+        }
     }
     
     // MARK: Helpers
@@ -34,11 +50,12 @@ class NotificationController: UITableViewController {
 
 extension NotificationController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notifications.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! NotificationCell
+        cell.viewModel = NotificationViewModel(notification: notifications[indexPath.row])
         return cell
     }
 }

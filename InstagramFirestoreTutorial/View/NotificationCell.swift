@@ -11,6 +11,10 @@ class NotificationCell: UITableViewCell {
     
     // MARK: Properties
     
+    var viewModel: NotificationViewModel? {
+        didSet { configure() }
+    }
+    
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
@@ -23,7 +27,8 @@ class NotificationCell: UITableViewCell {
     private let infoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.text = "venom"
+        label.numberOfLines = 0
+        
         return label
     }()
     
@@ -63,16 +68,17 @@ class NotificationCell: UITableViewCell {
         profileImageView.setDimensions(height: 40, width: 40)
         profileImageView.layer.cornerRadius = 40 / 2
         
-        addSubview(infoLabel)
-        infoLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
-        
         addSubview(followButton)
         followButton.centerY(inView: self)
-        followButton.anchor(right: rightAnchor, paddingRight: 12, width: 100, height: 32)
+        followButton.anchor(right: rightAnchor, paddingRight: 12, width: 88, height: 32)
         
         addSubview(postImageView)
         postImageView.centerY(inView: self)
         postImageView.anchor(right: rightAnchor, paddingRight: 12, width: 40, height: 40)
+        
+        addSubview(infoLabel)
+        infoLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
+        infoLabel.anchor(right: followButton.leftAnchor, paddingRight: 4)
         
         followButton.isHidden = true
     }
@@ -89,5 +95,19 @@ class NotificationCell: UITableViewCell {
     
     @objc func handlePostTapped() {
         
+    }
+    
+    // MARK: Helpers
+    
+    func configure() {
+        guard let viewModel = viewModel else { return }
+        
+        profileImageView.sd_setImage(with: viewModel.profileImageUrl)
+        postImageView.sd_setImage(with: viewModel.postImageUrl)
+        
+        infoLabel.attributedText = viewModel.notificationMessage
+        
+        followButton.isHidden = !viewModel.shouldHideImageView
+        postImageView.isHidden = viewModel.shouldHideImageView
     }
 }

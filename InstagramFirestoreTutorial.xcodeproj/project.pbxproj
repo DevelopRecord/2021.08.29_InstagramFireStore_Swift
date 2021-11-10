@@ -51,6 +51,7 @@
 		FB81A66F26DB8D1C00418765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB81A66E26DB8D1C00418765 /* Assets.xcassets */; };
 		FB81A67126DCC9DD00418765 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A67026DCC9DD00418765 /* FeedCell.swift */; };
 		FB81A67326DCCC3B00418765 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB81A67226DCCC3B00418765 /* Extensions.swift */; };
+		FB82D199273BB6BA004AA1BD /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82D198273BB6BA004AA1BD /* NotificationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		FB81A66E26DB8D1C00418765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Assets.xcassets; sourceTree = "<group>"; };
 		FB81A67026DCC9DD00418765 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FB81A67226DCCC3B00418765 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FB82D198273BB6BA004AA1BD /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				FB7779CD26FF155900246111 /* UserCellViewModel.swift */,
 				FB7DDD04271023D700D95AEA /* PostViewModel.swift */,
 				FB8146E6272FDCE40063BAE2 /* CommentViewModel.swift */,
+				FB82D198273BB6BA004AA1BD /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7DDD05271023D700D95AEA /* PostViewModel.swift in Sources */,
+				FB82D199273BB6BA004AA1BD /* NotificationViewModel.swift in Sources */,
 				FB8146E7272FDCE40063BAE2 /* CommentViewModel.swift in Sources */,
 				FB7DEF2A26DE1E060042DA0F /* CustomTextField.swift in Sources */,
 				FB819AB526E8983E002CFFB4 /* ProfileHeader.swift in Sources */,
