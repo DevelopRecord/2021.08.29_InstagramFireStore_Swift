@@ -93,7 +93,6 @@ extension SearchController: UISearchResultsUpdating {
                 $0.fullname.lowercased().contains(searchText)
         })
         
-        print("DEBUG: Filtered user \(filteredUser)")
         self.tableView.reloadData()
     }
     

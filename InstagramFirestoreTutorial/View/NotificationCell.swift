@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol NotificationCellDelegate: AnyObject {
+    func cell(_ cell: NotificationCell, wantsToFollow uid: String)
+    func cell(_ cell: NotificationCell, wantsToUnfollow uid: String)
+    func cell(_ cell: NotificationCell, wantsToViewPost postId: String)
+}
+
 class NotificationCell: UITableViewCell {
     
     // MARK: Properties
@@ -15,12 +21,19 @@ class NotificationCell: UITableViewCell {
         didSet { configure() }
     }
     
+    weak var delegate: NotificationCellDelegate?
+    
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
         iv.backgroundColor = .lightGray
         iv.image = #imageLiteral(resourceName: "venom-7")
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(tap)
+        
         return iv
     }()
     
@@ -28,11 +41,10 @@ class NotificationCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.numberOfLines = 0
-        
         return label
     }()
     
-    private let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
@@ -45,8 +57,8 @@ class NotificationCell: UITableViewCell {
         return iv
     }()
     
-    private let followButton: UIButton = {
-        let button = UIButton()
+    private lazy var followButton: UIButton = {
+        let button = UIButton(type: .system)
         button.setTitle("Loading", for: .normal)
         button.layer.cornerRadius = 3
         button.layer.borderColor = UIColor.lightGray.cgColor
@@ -63,20 +75,20 @@ class NotificationCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         
-        addSubview(profileImageView)
+        contentView.addSubview(profileImageView)
         profileImageView.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
         profileImageView.setDimensions(height: 40, width: 40)
         profileImageView.layer.cornerRadius = 40 / 2
         
-        addSubview(followButton)
+        contentView.addSubview(followButton)
         followButton.centerY(inView: self)
         followButton.anchor(right: rightAnchor, paddingRight: 12, width: 88, height: 32)
         
-        addSubview(postImageView)
+        contentView.addSubview(postImageView)
         postImageView.centerY(inView: self)
         postImageView.anchor(right: rightAnchor, paddingRight: 12, width: 40, height: 40)
         
-        addSubview(infoLabel)
+        contentView.addSubview(infoLabel)
         infoLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         infoLabel.anchor(right: followButton.leftAnchor, paddingRight: 4)
         
@@ -89,12 +101,22 @@ class NotificationCell: UITableViewCell {
     
     // MARK: Actions
     
+    @objc func handleProfileImageTapped() {
+        print("DEBUG: 프로필 이미지 탭")
+    }
+    
     @objc func handleFollowTapped() {
-        
+        guard let viewModel = viewModel else { return }
+        if viewModel.notification.userIsFollowed {
+            delegate?.cell(self, wantsToUnfollow: viewModel.notification.uid)
+        } else {
+            delegate?.cell(self, wantsToFollow: viewModel.notification.uid)
+        }
     }
     
     @objc func handlePostTapped() {
-        
+        guard let postId = viewModel?.notification.postId else { return }
+        delegate?.cell(self, wantsToViewPost: postId)
     }
     
     // MARK: Helpers
@@ -109,5 +131,9 @@ class NotificationCell: UITableViewCell {
         
         followButton.isHidden = !viewModel.shouldHideImageView
         postImageView.isHidden = viewModel.shouldHideImageView
+        
+        followButton.setTitle(viewModel.followButtonText, for: .normal)
+        followButton.backgroundColor = viewModel.followButtonBackgroundColor
+        followButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
     }
 }
