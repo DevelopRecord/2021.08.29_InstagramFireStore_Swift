@@ -92,7 +92,6 @@ class NotificationCell: UITableViewCell {
         infoLabel.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         infoLabel.anchor(right: followButton.leftAnchor, paddingRight: 4)
         
-        followButton.isHidden = true
     }
     
     required init?(coder: NSCoder) {
@@ -107,6 +106,7 @@ class NotificationCell: UITableViewCell {
     
     @objc func handleFollowTapped() {
         guard let viewModel = viewModel else { return }
+        
         if viewModel.notification.userIsFollowed {
             delegate?.cell(self, wantsToUnfollow: viewModel.notification.uid)
         } else {

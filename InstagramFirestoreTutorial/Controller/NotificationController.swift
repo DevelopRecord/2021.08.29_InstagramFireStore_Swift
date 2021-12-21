@@ -83,6 +83,8 @@ extension NotificationController {
     }
 }
 
+// MARK: NotificationCellDelegate
+
 extension NotificationController: NotificationCellDelegate {
     func cell(_ cell: NotificationCell, wantsToFollow uid: String) {
         UserService.follow(uid: uid) { _ in
